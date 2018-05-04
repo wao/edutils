@@ -2,4 +2,4 @@ yarn-error.log
 *.swp
 yarn.lock
 node_modules
-dist
+lib
