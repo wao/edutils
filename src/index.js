@@ -15,10 +15,18 @@ export function edassert(expr){
 
 function nop(){}
 
+function methodOrNop(proto, methodName){
+    if( methodName in proto ){
+        return proto[methodName];
+    }else{
+        return nop;
+    }
+}
+
 function chainMethod(proto, methodName){
-  const inv = proto.__invariant__ || nop;
-  const pre = proto[ "__pre_" + methodName ] || nop;
-  const post = proto[ "__post_" + methodName ] || nop;
+  const inv = methodOrNop( proto, "__invariant" ); 
+  const pre = methodOrNop( proto, "__pre_" + methodName );
+  const post =methodOrNop( proto, "__post_" + methodName );
   const org = proto[methodName];
 
   // console.log( "methods", pre, post, org );
