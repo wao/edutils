@@ -1,4 +1,5 @@
 import _ from "lodash";
+import EdObject from "./ed_object";
 
 export function edassert(expr){
     let result = expr;
@@ -48,6 +49,7 @@ export function dbc(class_object){
 const modules = {
     assert: edassert,
     dbc: dbc,
+    Object: EdObject,
 }
 
 export default modules;

@@ -11,7 +11,7 @@
     "tape": "^4.9.0"
   },
   "scripts": {
-    "test": "ls -1 test/test_*.js | xargs -iname node_modules/babel-cli/bin/babel-node.js name",
+    "test": "ls -1 test/*_test.js | xargs -iname node_modules/babel-cli/bin/babel-node.js name",
     "build": "node_modules/babel-cli/bin/babel.js src --out-dir lib"
   },
   "babel": {
@@ -20,6 +20,6 @@
     ]
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.11"
   }
 }
